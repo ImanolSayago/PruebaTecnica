@@ -1,0 +1,19 @@
+<nav id="nav" >
+  <div class="nav-container">
+    <a class="titulo" href="#">Teatro Gran Espectáculo</a>
+
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+  </div>
+
+  <div>
+ <ul [class.active]="menuAbierto" class="nav-links">
+    <li><a href="#">Inicio</a></li>
+    <li><a (click)="irEventos()">Eventos</a></li>
+    <li><a (click)="misReservas()">Ver reservas</a></li>
+    <li><a (click)="irLogin()">Login</a></li>
+  </ul>
+  </div>
+
+ 
+ 
+</nav>

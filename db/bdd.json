@@ -1,0 +1,12 @@
+{
+
+
+  "admin":[
+    {
+    "id":1,
+    "usuario": "adminteatro",
+    "password": "teatro123"
+  }
+
+  ]
+}

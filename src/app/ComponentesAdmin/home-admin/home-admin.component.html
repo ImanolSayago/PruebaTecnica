@@ -1,0 +1,43 @@
+<app-nav-admin></app-nav-admin>
+
+<section>
+
+    <h1>Crear nuevo evento</h1>
+   <form [formGroup]="formulario" (ngSubmit)="subirEvento()">
+
+        <div class="contenido">
+            <label for="nombre">Ingrese el nombre del evento</label>
+            <input type="text" formControlName="nombre">
+        </div>
+
+         <div class="contenido">
+            <label for="">Ingrese la fecha y hora del evento</label>
+           <input type="datetime-local" formControlName="fechaHora">
+        </div>
+
+         <div class="contenido">
+            <label for="">Ingrese la capacidad total</label>
+            <input type="number" formControlName="capacidadTotal">
+        </div>
+
+         <div class="contenido">
+            <label for="">Ingrese la cantidad de entradas disponibles</label>
+            <input type="number" formControlName="capacidadDisponible">
+        </div>
+
+         <div class="contenido">
+
+
+            <label for="tipoEvento">Tipo de Evento</label>
+            <select name="tipoEvento" id="tipoEvento" formControlName="tipoEvento">
+            <option value="" disabled selected>Seleccion un tipo de evento</option>
+                @for (item of tipoEvento; track $index) {
+                    <option [value]="item.key">{{ item.label }}</option>
+                                                         }
+             </select>
+        </div>
+
+        <button>Subir evento</button>
+    </form>
+
+</section>

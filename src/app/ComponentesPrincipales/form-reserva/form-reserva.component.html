@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+<body>
+
+  <main>
+
+  <h3>Evento que asistira: <br> {{evento.nombre}}</h3>
+
+  <form [formGroup]="formulario" (ngSubmit)="hacerReserva()">
+    <div class="cont-form">
+      <label for="nombreAsistente">Ingrese el nombre de la persona que asistira al evento</label>
+      <input type="text" id="nombreAsistente" formControlName="nombreAsistente">
+      @if (formulario.controls['nombreAsistente'].invalid && (formulario.controls['nombreAsistente'].touched || formulario.controls['nombreAsistente'].dirty)) {
+        <div class="error-message">
+          <p>Nombre obligatorio</p>
+        </div>
+      }
+    </div>
+
+    <div class="cont-form">
+      <label for="email">Ingrese el correo electronico de la persona que asistira al evento</label>
+      <input type="text" id="email" formControlName="email">
+      @if (formulario.controls['email'].invalid && (formulario.controls['email'].touched || formulario.controls['email'].dirty)) {
+        <div class="error-message">
+          <p>Correo obligatorio</p>
+        </div>
+      }
+    </div>
+
+    <div class="cont-form">
+      <label for="tipoEntrada">Tipo de entrada</label>
+      <select name="tipoEntrada" id="tipoEntrada" formControlName="tipoEntrada">
+        <option value="" disabled selected>Seleccione un tipo de entrada</option>
+        @for (item of tiposEntrada; track $index) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+      @if (formulario.controls['tipoEntrada'].invalid && (formulario.controls['tipoEntrada'].touched || formulario.controls['tipoEntrada'].dirty)) {
+        <div class="error-message">
+          <p>Seleccione un tipo de entrada</p>
+        </div>
+      }
+    </div>
+
+    <button class="btn-form" [disabled]="formulario.invalid">Reservar</button>
+  </form>
+</main>
+</body>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://testing.certant.com/teatro",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

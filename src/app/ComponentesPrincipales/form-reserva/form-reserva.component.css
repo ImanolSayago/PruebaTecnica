@@ -1,0 +1,92 @@
+body{
+  background-color: white;
+   height: 100vh;
+   margin-top: 100px;
+}
+main {
+ 
+  max-width: 500px;
+  margin: 0rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid black;
+}
+
+
+
+main > h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #2e3854;
+}
+
+.cont-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.cont-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.cont-form input[type="text"],
+.cont-form select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.cont-form input[type="text"]:focus,
+.cont-form select:focus {
+  outline: none;
+  border-color: #2e3854;
+  box-shadow: 0 0 5px rgba(46, 56, 84, 0.3);
+}
+
+.error-message p,
+.cont-form div > p {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.btn-form {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #4c65b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-form:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.btn-form:not(:disabled):hover {
+  background-color: #1a4beb;
+}
+
+@media (max-width:768px) {
+
+  main{
+    width: 350px;
+  }
+  
+}
+

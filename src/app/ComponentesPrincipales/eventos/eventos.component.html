@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+
+<main id="eventos">
+
+        <h1 class="titulo">Eventos disponibles</h1>
+
+        <div class="cont-carta">
+
+             @for (item of listaEventos; track $index) {
+
+               <app-carta [evento]="item.id" [boton]=true></app-carta>
+            }
+</div>
+   
+    
+</main>
+
+
+<app-footer></app-footer>
