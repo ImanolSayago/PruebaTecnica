@@ -1,0 +1,12 @@
+<app-nav-admin></app-nav-admin>
+
+<section>
+
+    <h1>Mostrando todos los eventos...</h1>
+
+    <div class="seccion-carta"></div>
+    @for (item of listaEventos; track $index) {
+        <app-carta [evento]="item.id" [boton]=true></app-carta>
+    }
+
+</section>

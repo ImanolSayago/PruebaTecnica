@@ -1,0 +1,22 @@
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+section h1{
+font-size: 3rem;
+color:#6876b6 ;
+}
+.seccion-carta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width:768px)
+{
+  section h1{
+font-size: 1.5rem;
+}  
+}

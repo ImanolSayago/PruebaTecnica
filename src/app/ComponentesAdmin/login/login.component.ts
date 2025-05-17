@@ -44,7 +44,7 @@ export class LoginComponent {
          
           
           this.loginExitoso();
-              this.rutas.navigate(["HomeAdmin"])
+              this.rutas.navigate(["principal"])
         },
         error:(err:Error)=>
         {

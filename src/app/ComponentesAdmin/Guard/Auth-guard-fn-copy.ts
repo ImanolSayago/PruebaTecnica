@@ -12,7 +12,7 @@ export const authGuardFnLogout = ()=>
    }
    else
    {
-    rutas.navigate(["HomeAdmin"])
+    rutas.navigate(["principal"])
     return false;
    }
 }

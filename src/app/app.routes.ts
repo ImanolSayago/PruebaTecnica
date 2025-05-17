@@ -7,6 +7,7 @@ import { LoginComponent } from './ComponentesAdmin/login/login.component';
 
 import { authGuardFn } from './ComponentesAdmin/Guard/Auth-guard-fn';
 import { HomeAdminComponent } from './ComponentesAdmin/home-admin/home-admin.component';
+import { PrincipalComponent } from './ComponentesAdmin/principal/principal.component';
 
 
 export const routes: Routes = [
@@ -39,6 +40,13 @@ export const routes: Routes = [
 
      {
         path:"HomeAdmin", component:HomeAdminComponent,
+        canActivate:[authGuardFn]
+    }
+
+    ,
+
+     {
+        path:"principal", component:PrincipalComponent,
         canActivate:[authGuardFn]
     }
 ];

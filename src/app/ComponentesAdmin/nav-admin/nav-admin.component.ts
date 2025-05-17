@@ -24,6 +24,10 @@ logout()
    this.rutas.navigate(['login']);
 }
 
+irCreacion()
+{
+  this.rutas.navigate(["HomeAdmin"])
+}
 
  
 }
