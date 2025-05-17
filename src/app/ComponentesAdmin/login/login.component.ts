@@ -5,7 +5,7 @@ import { AdminService } from '../../Services/admin.service';
 import { Admin } from '../../Interfaces/Admin';
 import { subscribeOn } from 'rxjs';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-login',
   imports: [NavComponent,ReactiveFormsModule],
@@ -40,8 +40,11 @@ export class LoginComponent {
     this.servicioAdmin.logIn(this.admin).subscribe(
       {
         next:()=>{
-          alert("Login exitoso")
-          this.rutas.navigate(["HomeAdmin"])
+        
+         
+          
+          this.loginExitoso();
+              this.rutas.navigate(["HomeAdmin"])
         },
         error:(err:Error)=>
         {
@@ -51,5 +54,16 @@ export class LoginComponent {
       }
     )
   }
+
+    loginExitoso()
+    {
+    Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Login correcto",
+  showConfirmButton: false,
+  timer: 1500
+      });
+    }
   
 }

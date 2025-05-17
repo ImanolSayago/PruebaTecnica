@@ -5,12 +5,14 @@
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
   </div>
 
-  <div>
+  <div class="cont-links">
  <ul [class.active]="menuAbierto" class="nav-links">
     <li><a href="#">Inicio</a></li>
     <li><a (click)="irEventos()">Eventos</a></li>
     <li><a (click)="misReservas()">Ver reservas</a></li>
-    <li><a (click)="irLogin()">Login</a></li>
+    <li><a (click)="irLogin()">
+      <img src="img/login.png" alt="">
+    </a></li>
   </ul>
   </div>
 

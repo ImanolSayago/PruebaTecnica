@@ -15,7 +15,7 @@ export const authGuardFn = ()=>
        }
        else
        {
-        localStorage.removeItem("token"); // Eliminar token inválido
+        localStorage.removeItem("token"); 
         rutas.navigate(["login"])
         return false;
        }

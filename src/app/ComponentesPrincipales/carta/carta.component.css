@@ -54,6 +54,16 @@
   background-color: #1a4beb;
 }
 
+.btn-carta-cancelar{
+   align-self: center;
+  padding: 10px 15px;
+  background-color: #f50a02be;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
 @media(max-width:768px)
 {
    .cont-carta {

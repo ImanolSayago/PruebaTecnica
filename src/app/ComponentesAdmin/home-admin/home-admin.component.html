@@ -30,7 +30,7 @@
 
             <label for="tipoEvento">Tipo de Evento</label>
             <select name="tipoEvento" id="tipoEvento" formControlName="tipoEvento">
-            <option value="" disabled selected>Seleccion un tipo de evento</option>
+            <option value="" disabled selected>Seleccioná un tipo de evento</option>
                 @for (item of tipoEvento; track $index) {
                     <option [value]="item.key">{{ item.label }}</option>
                                                          }

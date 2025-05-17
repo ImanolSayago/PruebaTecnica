@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Reservas } from '../../Interfaces/Reservas';
 import { ReservaService } from '../../Services/reserva.service';
 import { NavComponent } from "../nav/nav.component";
@@ -8,7 +8,7 @@ import { EventosService } from '../../Services/eventos.service';
 import { Eventos } from '../../Interfaces/Eventos';
 import { TipoEntrada } from '../../Interfaces/tipoEntrada';
 import { FooterComponent } from "../footer/footer.component";
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-form-reserva',
   imports: [NavComponent, ReactiveFormsModule, FooterComponent],
@@ -33,6 +33,7 @@ export class FormReservaComponent implements OnInit{
 
   route = inject(ActivatedRoute);
 
+  rutas = inject(Router);
   fb = inject(FormBuilder);
 
   servicioReservas = inject(ReservaService);
@@ -93,10 +94,12 @@ export class FormReservaComponent implements OnInit{
       this.servicioReservas.CrearReserva(this.reserva).subscribe({
       next:()=>
       {
-        alert("Reserva exitosa");
+        this.ReservaExitosa();
+        this.rutas.navigate(["misReservas"])
       },
       error:()=>{
         alert("La reserva no se pudo generar, intente nuevamente");
+        window.location.reload();
       }
     })
     }
@@ -104,5 +107,26 @@ export class FormReservaComponent implements OnInit{
   }
 
 
+      ReservaExitosa()
+      {
+      Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Login correcto",
+    showConfirmButton: false,
+    timer: 1500
+        });
+      }
+
+    ReservaFallida()
+    {
+    Swal.fire({
+  position: "top-end",
+  icon: "error",
+  title: "Login correcto",
+  showConfirmButton: false,
+  timer: 1500
+      });
+    }
 
 }

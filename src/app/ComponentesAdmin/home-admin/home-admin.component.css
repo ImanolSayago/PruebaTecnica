@@ -11,6 +11,7 @@ section {
 
 section h1{
     font-size: 4rem;
+    color: #6876b6;
 }
 
 form {
@@ -54,7 +55,7 @@ select:focus {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #6876b6;
   color: white;
   padding: 0.9rem;
   border: none;
@@ -67,4 +68,13 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+
+@media(max-width:768px)
+{
+  section h1{
+    font-size: 2.4rem;
+    text-align: center;
+  }
 }

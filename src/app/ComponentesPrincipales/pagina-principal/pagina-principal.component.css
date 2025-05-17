@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  filter: brightness(85%);
   
 }
 
@@ -85,7 +86,7 @@
 }
 
 .titulo-entrada {
-  font-size: 2.5rem;
+  font-size: 3.1rem;
   color: #6876b6;
   text-shadow: 1px 1px #fff;
 }
@@ -207,7 +208,10 @@
     text-align: center;
   }
 
-
+.titulo-entrada{
+  font-size: 1.9rem;
+  text-align: center;
+}
   .subtitulo-entrada {
     text-align: center;
   }

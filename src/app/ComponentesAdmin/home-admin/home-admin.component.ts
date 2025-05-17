@@ -1,10 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { NavAdminComponent } from "../nav-admin/nav-admin.component";
-import { TipoEvento } from '../../Interfaces/TipoEvento';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Eventos } from '../../Interfaces/Eventos';
 import { EventosService } from '../../Services/eventos.service';
-import { Router } from '@angular/router';
 import { EventosSend } from '../../Interfaces/EventoSend';
 
 @Component({
@@ -20,7 +17,7 @@ export class HomeAdminComponent {
   { key: 'OBRA_TEATRO', label: 'Obra de teatro' },
   { key: 'CONCIERTO', label: 'Concierto' },
   { key: 'CONFERENCIA', label: 'Conferencia' }
-];
+  ];
 
   serviceEventos= inject(EventosService);
   fb = inject(FormBuilder);
