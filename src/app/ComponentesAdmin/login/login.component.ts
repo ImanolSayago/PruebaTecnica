@@ -32,25 +32,27 @@ export class LoginComponent {
   })
 
 
-  login()
-  {
-    this.admin.contrasena = this.formulario.value.contrasena??"";
-    this.admin.usuario = this.formulario.value.usuario??"";
-    
-    this.servicioAdmin.logIn(this.admin).subscribe(
-      {
-        next:()=>{
-              this.loginExitoso();
-              this.rutas.navigate(["principal"])
-        },
-        error:(err:Error)=>
-        {
-          alert("No se pudo loguear con exito, intente de nuevo")
-          console.log(err.message);
-        }
+login() {
+  this.admin.contrasena = this.formulario.value.contrasena ?? "";
+  this.admin.usuario     = this.formulario.value.usuario     ?? "";
+
+  this.servicioAdmin.logIn(this.admin).subscribe({
+    next: (exito) => {              // ⬅️ recibo true / false
+      if (exito) {
+        this.loginExitoso();         // muestra SweetAlert
+        this.rutas.navigate(["principal"]);
+      } else {
+
+        this.credencialesIncorrectas();
       }
-    )
-  }
+    },
+    error: (err: Error) => {
+     this.errorConexion()
+      console.error(err.message);
+    }
+  });
+}
+
 
     loginExitoso()
     {
@@ -58,6 +60,28 @@ export class LoginComponent {
   position: "top-end",
   icon: "success",
   title: "Login correcto",
+  showConfirmButton: false,
+  timer: 1500
+      });
+    }
+
+    credencialesIncorrectas()
+    {
+        Swal.fire({
+  position: "top-end",
+  icon: "error",
+  title: "Credenciales incorrectas",
+  showConfirmButton: false,
+  timer: 1500
+      });
+    }
+
+    errorConexion()
+    {
+            Swal.fire({
+  position: "top-end",
+  icon: "error",
+  title: "Error de conexion",
   showConfirmButton: false,
   timer: 1500
       });

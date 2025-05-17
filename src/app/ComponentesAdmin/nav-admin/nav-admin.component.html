@@ -1,13 +1,13 @@
 <nav id="nav" >
   <div class="nav-container">
-    <a class="titulo" href="#">Teatro Gran Espectáculo</a>
+    <a class="titulo" (click)="irInicioAdmin()">Teatro Gran Espectáculo</a>
 
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
   </div>
 
   <div>
  <ul [class.active]="menuAbierto" class="nav-links">
-    <li><a href="#">Inicio</a></li>
+    <li><a (click)="irInicioAdmin()">Inicio</a></li>
     <li><a (click)="irCreacion()" >Crear nuevo evento</a></li>
     <li><a (click)="logout()">
       <img src="img/cerrar-sesion.png" alt="">

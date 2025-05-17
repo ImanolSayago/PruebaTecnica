@@ -29,5 +29,10 @@ irCreacion()
   this.rutas.navigate(["HomeAdmin"])
 }
 
+irInicioAdmin()
+{
+  this.rutas.navigate(["principal"])
+}
+
  
 }
