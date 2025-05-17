@@ -27,8 +27,6 @@ export class FormReservaComponent implements OnInit{
   });
   }
 
-
-
   idEvento=0;
 
   route = inject(ActivatedRoute);
@@ -44,7 +42,6 @@ export class FormReservaComponent implements OnInit{
     email:["",Validators.required],
     tipoEntrada:["",Validators.required],
   })
-
 
   evento : Eventos= {
     id : 0,
@@ -105,8 +102,7 @@ export class FormReservaComponent implements OnInit{
     }
     
   }
-
-
+  
       ReservaExitosa()
       {
       Swal.fire({

@@ -76,7 +76,7 @@
 #cont-entrada {
   min-height: 80vh;
   width: 100%;
-  background-color: #fff8e1; /* fondo cálido, estilo entrada */
+  background-color: #fff8e1; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +140,7 @@
 
 
 #info-general {
-  background-color: #f7f3e8; /* cálido neutro */
+  background-color: #f7f3e8; 
   padding: 80px 40px;
   display: flex;
   justify-content: center;

@@ -3,7 +3,7 @@ import { NavAdminComponent } from "../nav-admin/nav-admin.component";
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EventosService } from '../../Services/eventos.service';
 import { EventosSend } from '../../Interfaces/EventoSend';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-home-admin',
   imports: [NavAdminComponent,ReactiveFormsModule],
@@ -42,7 +42,7 @@ export class HomeAdminComponent {
 
   subirEvento()
   {
-     this.evento.nombre = this.formulario.value.nombre ?? "";
+  this.evento.nombre = this.formulario.value.nombre ?? "";
   this.evento.fechaHora = new Date(this.formulario.value.fechaHora ?? new Date()).toISOString();
   this.evento.capacidadTotal = Number(this.formulario.value.capacidadTotal ?? 0);
   this.evento.capacidadDisponible = Number(this.formulario.value.capacidadDisponible ?? 0);
@@ -52,15 +52,36 @@ export class HomeAdminComponent {
 
       this.serviceEventos.CrearEvento(this.evento).subscribe({
         next:()=>{
-          alert("Evento creado con exito");
+         this.eventoCreado()
           window.location.reload();
         },
         error:(err:Error)=>
         {
           console.log(err.message);
-          alert("No se pudo crear el evento, intente nuevamente")
+          this.eventoFallido();
         }
       })
-
   }
+
+   eventoCreado()
+      {
+      Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Evento creado con exito",
+    showConfirmButton: false,
+    timer: 1500
+        });
+      }
+
+        eventoFallido()
+      {
+      Swal.fire({
+    position: "top-end",
+    icon: "error",
+    title: "El evento no se pudo crear, intente nuevamente",
+    showConfirmButton: false,
+    timer: 1500
+        });
+      }
 }

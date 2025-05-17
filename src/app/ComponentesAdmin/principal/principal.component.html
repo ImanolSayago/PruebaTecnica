@@ -6,7 +6,9 @@
 
     <div class="seccion-carta"></div>
     @for (item of listaEventos; track $index) {
-        <app-carta [evento]="item.id" [boton]=true></app-carta>
+        <app-carta [evento]="item.id" [darBaja]=true></app-carta>
     }
 
 </section>
+
+

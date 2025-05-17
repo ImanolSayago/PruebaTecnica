@@ -2,17 +2,22 @@
 
 <main>
   <div class="contenedor-principal">
+
     <h1>Buscar información sobre usuarios</h1>
 
     <div class="cont-buscador">
       <form [formGroup]="formulario" (ngSubmit)="buscarEventosCorreo()">
-        <label for="correo">Ingrese el correo para ver su información</label>
-        <input type="text" id="correo" formControlName="correo" />
-        <button class="btn-buscador">Buscar</button>
+
+          <label for="correo">Ingrese el correo para ver su información</label>
+          <input type="text" id="correo" formControlName="correo" />
+          <button class="btn-buscador">Buscar</button>
+
       </form>
     </div>
 
+
     <div class="cont-info-persona">
+
       @if(cantAsistencias >= 5 && correopersona != "") {
         <div>
           <h4>Felicitaciones</h4>
@@ -20,11 +25,13 @@
           <p>Cantidad de asistencias: {{ cantAsistencias }}</p>
         </div>
       }
+
       @else if (correopersona == "") {
         <div>
           <p>Agregá un correo para mostrarte la información</p>
         </div>
       }
+
       @else if (correopersona != "" || correopersona.length > 0) {
         <div>
           <p>Felicidades tenés {{ cantAsistencias }} asistencias en el año</p>
@@ -34,13 +41,16 @@
     </div>
 
     <div class="contenedor-general">
+
       <h4>Reservas realizadas por: {{ correopersona }}</h4>
-      <div class="cont-eventos">
+
+        <div class="cont-eventos">
         @if (listaReservas.length > 0) {
           @for (item of listaReservas; track item.id) {
             <app-carta [evento]="item.eventoId" [boton]="false"></app-carta>
           }
         }
+        
         @else if (correopersona != "") {
           <p class="no-encontrado">No se encontraron reservas para este correo electrónico.</p>
         }

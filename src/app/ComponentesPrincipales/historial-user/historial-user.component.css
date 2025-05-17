@@ -1,4 +1,4 @@
-/* Contenedor principal para limitar ancho y centrar */
+
 main {
   background-color: white;
   display: flex;
@@ -14,7 +14,7 @@ main {
   margin: 0 auto;
 }
 
-/* Título principal */
+
 h1 {
   margin-bottom: 2rem;
   font-size: 3rem;
@@ -22,7 +22,7 @@ h1 {
   text-align: center;
 }
 
-/* Contenedor del buscador */
+
 .cont-buscador {
   margin-bottom: 3rem;
   background: #f0f4ff;
@@ -31,7 +31,7 @@ h1 {
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* Formulario */
+
 form {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ form input:focus {
   border-color: #4c65b6;
 }
 
-/* Botón de búsqueda */
+
 .btn-buscador {
   margin-top: 1rem;
   padding: 10px 0;
@@ -79,7 +79,7 @@ form input:focus {
   background-color: #1a4beb;
 }
 
-/* Contenedor info persona */
+
 .cont-info-persona {
   margin-bottom: 3rem;
   padding: 1.5rem;
@@ -101,7 +101,7 @@ form input:focus {
   margin: 0.4rem 0;
 }
 
-/* Contenedor general y título */
+
 .contenedor-general h4 {
   text-align: center;
   font-size: 2.1rem;
@@ -109,7 +109,7 @@ form input:focus {
   margin-bottom: 1rem;
 }
 
-/* Contenedor eventos */
+
 .cont-eventos {
     width: 100%;
   display: grid;
@@ -117,18 +117,18 @@ form input:focus {
   gap: 1.5rem;
   padding: 1rem 0;
   
-  justify-content: center; /* Centra todo el grid horizontalmente */
-  justify-items: center;   /* Centra cada ítem dentro de su celda */
+  justify-content: center; 
+  justify-items: center;  
 }
 
-/* Mensaje no encontrado */
+
 .no-encontrado {
   font-size: 1.3rem;
   color: rgb(255, 0, 0);
   text-align: center;
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.2rem;

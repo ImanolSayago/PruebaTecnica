@@ -6,7 +6,7 @@
 
                 <div class="info-carta">
                     <p>Fecha: {{evento1.fechaHora| date:'dd/MM/yyyy'}}</p>
-                 <p>Horario: {{ evento1.fechaHora | date:' HH:mm' }} hs</p>
+                    <p>Horario: {{ evento1.fechaHora | date:' HH:mm' }} hs</p>
                     <p>Entradas disponibles: {{evento1.capacidadDisponible}}</p>
                     <p>Capacidad total: {{evento1.capacidadTotal}}</p>
                     <p>Tipo evento: {{evento1.tipoEvento}}</p>
@@ -17,8 +17,14 @@
                   <a class="btn-carta" [routerLink]="['/reservas/',evento1.id]" >Hacer reserva</a>
                 }
 
-                @else {
+                @else if(boton() == false) {
                   <a class="btn-carta-cancelar" (click)="cancelarReserva()" >Cancelar reserva</a>
                 }
+
+                @if (darBaja()== true ) {
+                  <a class="btn-carta-baja">Dar de baja evento</a>
+                }
+
+             
             
             </div>

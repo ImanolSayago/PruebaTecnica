@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { EventosService } from '../../Services/eventos.service';
 import { ReservaService } from '../../Services/reserva.service';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-carta',
   imports: [CommonModule,RouterLink],
@@ -12,12 +12,14 @@ import { ReservaService } from '../../Services/reserva.service';
   styleUrl: './carta.component.css'
 })
 export class CartaComponent implements OnInit {
+
   ngOnInit(): void {
    this.traerEventos()
   }
 
   evento = input<number>();
   boton = input<boolean>()
+  darBaja = input<boolean>();
 
   evento1:Eventos ={
     id:0,
@@ -34,7 +36,7 @@ export class CartaComponent implements OnInit {
   {
     this.servicioEventos.getEventoById(this.evento()??0).subscribe({
       next:(eventor)=>{
-        this.evento1= eventor;
+        this.evento1 = eventor;
       }
     })
   }
@@ -43,13 +45,37 @@ export class CartaComponent implements OnInit {
   {
     this.servicioReservas.CancelarReserva(this.evento()??0).subscribe({
       next:()=>{
-        alert("Reserva cancelada con exito");
+        this.reservaCancelada();
+        window.location.reload();
        
       },
       error:(err:Error)=>{
         console.log(err.message);
-        alert("No se pudo cancelar la reserva")
+        this.reservaNoCancelada();
       }
     })
   }
+
+  
+      reservaCancelada()
+      {
+      Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Reserva cancelada correctamente",
+    showConfirmButton: false,
+    timer: 1500
+        });
+      }
+
+        reservaNoCancelada()
+      {
+      Swal.fire({
+    position: "top-end",
+    icon: "error",
+    title: "La reserva no se pudo cancelar",
+    showConfirmButton: false,
+    timer: 1500
+        });
+      }
 }

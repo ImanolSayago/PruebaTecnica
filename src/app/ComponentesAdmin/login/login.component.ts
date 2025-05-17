@@ -40,10 +40,7 @@ export class LoginComponent {
     this.servicioAdmin.logIn(this.admin).subscribe(
       {
         next:()=>{
-        
-         
-          
-          this.loginExitoso();
+              this.loginExitoso();
               this.rutas.navigate(["principal"])
         },
         error:(err:Error)=>

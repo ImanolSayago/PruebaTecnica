@@ -6,6 +6,8 @@
   <h3>Evento que asistira: <br> {{evento.nombre}}</h3>
 
   <form [formGroup]="formulario" (ngSubmit)="hacerReserva()">
+
+
     <div class="cont-form">
       <label for="nombreAsistente">Ingrese el nombre de la persona que asistira al evento</label>
       <input type="text" id="nombreAsistente" formControlName="nombreAsistente">
